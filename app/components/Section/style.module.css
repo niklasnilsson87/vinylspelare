@@ -4,11 +4,11 @@
 }
 
 .toneBase {
-  background: var(--fg-1);
+  background: var(--bg);
 }
 
 .toneAlt {
-  background: var(--bg);
+  background: var(--fg-1);
 }
 
 .inner {

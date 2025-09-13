@@ -33,7 +33,7 @@ export default function Page() {
         <Section
           id="thorens"
           title="Thorens"
-          tone="alt"
+          tone="base"
           imageSrc="/thorens.jpg"
           imageAlt="Närbild på skivspelare från thorens"
           imagePosition="right"

@@ -1,7 +1,7 @@
 :root {
   --bg: #fefae0;
   --fg-1: #e9edc9;
-  --cta: #9FA0C3;
+  --cta: var(--fg-1);
   --cta-text: #1F201A;
   --ink: #1f1f1f;
   --white: #ffffff;
