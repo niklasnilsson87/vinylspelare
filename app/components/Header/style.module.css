@@ -1,0 +1,55 @@
+.siteHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  z-index: 100;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  transition: background .25s ease, color .25s ease, border-color .25s ease, backdrop-filter .25s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.inner {
+  height: 100%;
+  max-width: 1120px;
+  margin-right: 10px;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.atTop {
+  background: transparent;
+  color: white;
+  border-color: transparent;
+}
+
+.atTop .nav a {
+  color: white;
+}
+
+.atTop a::after {
+  content: none;
+}
+
+.scrolled {
+  background: var(--bg);
+  color: var(--ink);
+  border-color: rgba(0, 0, 0, .06);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.scrolled .nav a {
+  color: var(--ink-subtle);
+}

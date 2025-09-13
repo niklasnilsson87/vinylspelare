@@ -1,95 +1,78 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import ContactSection from "./components/ContactSection";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Section from "./components/Section";
+import Showcase from "./components/Showcase";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main>
+      <a className="skip-link" href="#content">Hoppa till innehåll</a>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Header />
+      <Hero />
+
+      <div id="content">
+        <Section
+          id="hantverket"
+          title="Hantverket"
+          tone="base"
+          imageSrc="/tools.png"
+          imageAlt="Arbetsbänk med träplanka och sandpapper"
+          imagePosition="right"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <p>
+            Varje detalj är skapad med omsorg. Jag arbetar med klassiska tekniker
+            och moderna metoder för att återställa och förädla träprodukter som ska
+            hålla i generationer.
+          </p>
+        </Section>
+
+        <Showcase />
+
+        <Section
+          id="thorens"
+          title="Thorens"
+          tone="alt"
+          imageSrc="/thorens.jpg"
+          imageAlt="Närbild på skivspelare från thorens"
+          imagePosition="right"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <p>
+            Jag är specialiserad på att restaurera, reparera och modifiera Thorens skivspelare,
+            med särskilt fokus på TD 124. Konceptet jag erbjuder är
+            totalrenoveringar med ny plint i massivt trä inkluderad, samt
+            restaurering av tonarmar – en komplett spelare i nyskick.
+          </p>
+          <p>
+            Priset är alltid fast och överenskommet i förväg. Naturligtvis utför jag
+            även mindre arbeten om så önskas.
+          </p>
+          <p>
+            Jag tillverkar plintar/lådor i amerikansk valnöt, ek och bok, med stor
+            variation på utförande.
+          </p>
+          <p>
+            Läs mer om <a href="https://auralhifi.com/pages/thorens" target="_blank" rel="noopener noreferrer">
+              Thorens historia
+            </a>.
+          </p>
+        </Section>
+
+        <ContactSection />
+      </div>
+
+      <Footer />
+    </main>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="site">
+      <div className="container">
+        © {new Date().getFullYear()} Mitt Hantverk
+      </div>
+    </footer>
   );
 }

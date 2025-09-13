@@ -1,0 +1,90 @@
+.section {
+  padding: 64px 0;
+  background: var(--fg-1);
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.heading {
+  margin-bottom: 16px;
+  font-size: clamp(22px, 4vw, 32px);
+}
+
+.lead {
+  margin-bottom: 32px;
+  color: var(--ink-subtle);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* stor vänster, liten höger */
+  gap: 12px;
+  align-items: stretch;
+}
+
+/* Stor vänsterbild – definierar höjd */
+.big {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* Höger kolumn – 2x2 */
+.right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  height: 100%;
+  min-height: 0;
+}
+
+.small {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+  filter: grayscale(0.2);
+}
+
+/* ----- Breakpoints ----- */
+
+/* Mellan: stapla stor över, små i grid under */
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .small {
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+}
+
+/* Små mobiler: allt i en kolumn */
+@media (max-width: 480px) {
+  .right {
+    grid-template-columns: 1fr;
+  }
+
+  .small {
+    height: auto;
+  }
+}
