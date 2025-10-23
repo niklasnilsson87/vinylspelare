@@ -4,7 +4,6 @@ import { FormEvent, useState } from "react";
 import styles from './style.module.css';
 
 export default function ContactSection() {
-
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
